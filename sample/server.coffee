@@ -1,4 +1,4 @@
-load 'my-mock-server.js'
+load 'jjunit.js'
 
 SimpleDateFormat = Java.type 'java.text.SimpleDateFormat'
 Date = Java.type("java.util.Date");
@@ -65,7 +65,7 @@ handlers = [
                     return null
 ]
 
-server = new MyMockServer 'sample/', handlers
+server = new JJUnit 'sample/', handlers
 server.start()
 
 

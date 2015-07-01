@@ -18,19 +18,19 @@
     }
 }*/
 
-function MyMockServer(base, handlers) {
-    var Undertow = Java.type("io.undertow.Undertow");
-    var Handlers = Java.type("io.undertow.Handlers");
-    var Headers = Java.type("io.undertow.util.Headers");
-    var HttpHandler = Java.type("io.undertow.server.HttpHandler");
-    var FileResourceManager = Java.type("io.undertow.server.handlers.resource.FileResourceManager");
+function JJUnit(base, handlers) {
+    var Undertow = Java.type('io.undertow.Undertow');
+    var Handlers = Java.type('io.undertow.Handlers');
+    var Headers = Java.type('io.undertow.util.Headers');
+    var HttpHandler = Java.type('io.undertow.server.HttpHandler');
+    var FileResourceManager = Java.type('io.undertow.server.handlers.resource.FileResourceManager');
     var File = Java.type('java.io.File');
     var Scanner = Java.type('java.util.Scanner');
     var JCoffeeScriptCompiler = Java.type('org.jcoffeescript.JCoffeeScriptCompiler');
-    var Less = Java.type("com.inet.lib.less.Less");
+    var Less = Java.type('com.inet.lib.less.Less');
     var FileUtils = Java.type('org.apache.commons.io.FileUtils');
-    var ByteBuffer = Java.type("java.nio.ByteBuffer");
-    var String = Java.type("java.lang.String");
+    var ByteBuffer = Java.type('java.nio.ByteBuffer');
+    var String = Java.type('java.lang.String');
 
     var dir = new File(base);
 
@@ -90,7 +90,7 @@ function MyMockServer(base, handlers) {
         h.regex = new RegExp(h.path.replace(/\$[^/]+/, '(.*?)') + '$');
     }
 
-    var myHttpHandler = new HttpHandler {
+    var jjunitHandler = new HttpHandler {
 
         handleRequest: function(exchange) {
             var path = exchange.getRequestURI();
@@ -189,11 +189,11 @@ function MyMockServer(base, handlers) {
 
     this.server = Undertow.builder()
         .addHttpListener(8080, "0.0.0.0")
-        .setHandler(myHttpHandler)
+        .setHandler(jjunitHandler)
         .build();
 }
 
-MyMockServer.prototype.start = function() {
+JJUnit.prototype.start = function() {
     this.server.start();
 
     // Wait for all thread to finish

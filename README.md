@@ -8,18 +8,18 @@ You can easily load all the static assets and also compile Coffeescript and LESS
 You need to setup Java8.
 
 ```
-jjs -cp my-mock-server-VERSION.jar YOUR_SCRIPT.JS
+jjs -cp jjunit.jar YOUR_SERVER_SCRIPT.JS
 ```
 
-In your script file to can use ```MyMockServer``` class by passing to argument:
+In your script file you can use ```JJUnit``` class by passing to argument:
 
 * basedir: Base directory for static assets.
-* handlers: handlers for rest APIs. (for example see sample/my-server.js)
+* handlers: handlers for rest APIs. (for example see sample/server.js)
 
 For Example:
 
 ```
-jjs -cp my-mock-server-1.0-SNAPSHOT.jar sample/my-server.js
+jjs -cp jjunit.jar sample/start.js
 ```
 
-You can use pom file to generate jar file ```mvn package assembly:single``` for download it from [releases page](https://github.com/wpic/my-mock-server/releases) (Unzip it).
+You can use pom file to generate jar file ```mvn package assembly:single``` for download it from [releases page](https://github.com/wpic/jjunit/releases) (Unzip it).
