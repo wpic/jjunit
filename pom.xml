@@ -14,11 +14,11 @@
             <artifactId>undertow-core</artifactId>
             <version>1.1.0.Final</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.google.code.maven-play-plugin.com.github.yeungda.jcoffeescript</groupId>
             <artifactId>jcoffeescript</artifactId>
             <version>1.0</version>
-        </dependency>
+        </dependency>-->
         <!--<dependency>
             <groupId>com.asual.lesscss</groupId>
             <artifactId>lesscss-engine</artifactId>
