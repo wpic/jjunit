@@ -23,3 +23,11 @@ jjs -cp jjunit.jar sample/start.js
 ```
 
 You can use pom file to generate jar file ```mvn package assembly:single``` for download it from [releases page](https://github.com/wpic/jjunit/releases) (Unzip it).
+
+# History
+
+**v1.0**
+* Use jlessc version 2
+
+**v1.0-SNAPSHOT**
+* Use Coffee-script Javascript with Nashorn egnine for faster Less compile

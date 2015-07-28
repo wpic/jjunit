@@ -128,18 +128,24 @@ function JJUnit(base, handlers) {
 
                     var data;
                     if (method.equalToString('POST') || method.equalToString('PUT')) {
-                        data = new Scanner(exchange.getRequestChannel()).useDelimiter("\\A").next();
+                        try {
+                            var channel = exchange.getRequestChannel();
+                            if (channel.available()) {
+                                data = new Scanner(channel).useDelimiter("\\A").next();
 
-                        var content = exchange.getRequestHeaders().getFirst('Content-Type');
+                                var content = exchange.getRequestHeaders().getFirst('Content-Type');
 
-                        // convert to json if it can
-                        if (content === 'application/json') {
-                            data = JSON.parse(data);
+                                // convert to json if it can
+                                if (content === 'application/json') {
+                                    data = JSON.parse(data);
+                                }
+                            }
                         }
+                        catch(e) {}
                     }
 
                     if (h.wait) {
-                    	Thread.sleep(h.wait);
+                        Thread.sleep(h.wait);
                     }
 
                     result = h.handler(params, data);
