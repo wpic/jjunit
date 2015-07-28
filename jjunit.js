@@ -130,7 +130,7 @@ function JJUnit(base, handlers) {
                     if (method.equalToString('POST') || method.equalToString('PUT')) {
                         try {
                             var channel = exchange.getRequestChannel();
-                            if (channel.available()) {
+                            //if (channel.available()) {
                                 data = new Scanner(channel).useDelimiter("\\A").next();
 
                                 var content = exchange.getRequestHeaders().getFirst('Content-Type');
@@ -139,7 +139,7 @@ function JJUnit(base, handlers) {
                                 if (content === 'application/json') {
                                     data = JSON.parse(data);
                                 }
-                            }
+                            //}
                         }
                         catch(e) {}
                     }
