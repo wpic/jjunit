@@ -27,7 +27,7 @@ You can use pom file to generate jar file ```mvn package assembly:single``` for 
 # History
 
 **v1.0**
-* Use jlessc version 2
+* Use jlessc version 1.2
 
 **v1.0-SNAPSHOT**
 * Use Coffee-script Javascript with Nashorn egnine for faster Less compile
