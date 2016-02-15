@@ -1,3 +1,5 @@
+THIS PROJECT IS DEPRECATED. This project is no longer being maintained. We are using NodeJS/Express for mocking.
+
 ## What's this for?
 
 Very small and fast and easy edit http server for mocking api and testing HTML components in your projects.
